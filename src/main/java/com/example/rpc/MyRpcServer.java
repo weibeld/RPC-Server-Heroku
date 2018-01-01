@@ -19,7 +19,10 @@ public class MyRpcServer extends StringRpcServer {
         RequestObj reqObj = gson.fromJson(reqJson, RequestObj.class);
         System.out.println(" [ ] Deserialized to object: " + reqObj);
         ReplyObj replyObj = process(reqObj);
-        return gson.toJson(replyObj);
+        System.out.println(" [ ] Calculated response object: " + replyObj);
+        String replyJson = gson.toJson(replyObj);
+        System.out.println(" [ ] Serialized to JSON: " + replyJson);
+        return replyJson;
     }
 
     private static ReplyObj process(RequestObj reqObj) {
