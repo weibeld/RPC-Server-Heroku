@@ -3,6 +3,8 @@ package com.example.rpc;
 import com.rabbitmq.client.StringRpcServer;
 import com.rabbitmq.client.Channel;
 import com.google.gson.Gson;
+import net.weibeld.rpc.RequestObj;
+import net.weibeld.rpc.ReplyObj;
 
 public class MyRpcServer extends StringRpcServer {
 
