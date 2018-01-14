@@ -4,7 +4,7 @@ import com.rabbitmq.client.StringRpcServer;
 import com.rabbitmq.client.Channel;
 
 /**
- * Custom RpcServer defining handler for incoming RPC requests.
+ * Custom RpcServer defining handler for incoming requests.
  *
  * This instance extends StringRpcServer, which is a special case of RpcServer
  * that expects requests to be strings and provides a handleStringCall method

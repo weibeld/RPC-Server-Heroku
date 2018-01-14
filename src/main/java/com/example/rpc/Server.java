@@ -20,11 +20,11 @@ public class Server {
         channel.queueDeclare(QUEUE, false, false, false, null);
 
         // Create RPC server
-        MyRpcServer rpcServer = new MyRpcServer(channel, QUEUE);
+        MyRpcServer server = new MyRpcServer(channel, QUEUE);
 
-        // Start listening for RPC requests
-        System.out.println(" [x] Awaiting RPC requests");
-        rpcServer.mainloop();
+        // Start listening for requests
+        System.out.println(" [x] Awaiting requests");
+        server.mainloop();
     }
 
 }
