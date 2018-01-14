@@ -5,7 +5,7 @@ import com.rabbitmq.client.Channel;
 
 public class Server {
 
-    private final static String RPC_QUEUE = "rpc_queue";
+    private final static String QUEUE = "rpc-queue";
 
     public static void main(String[] args) throws Exception {
 
@@ -17,10 +17,10 @@ public class Server {
         Channel channel = factory.newConnection().createChannel();
 
         // Declare queue on which to listen for RPC calls
-        channel.queueDeclare(RPC_QUEUE, false, false, false, null);
+        channel.queueDeclare(QUEUE, false, false, false, null);
 
         // Create RPC server
-        MyRpcServer rpcServer = new MyRpcServer(channel, RPC_QUEUE);
+        MyRpcServer rpcServer = new MyRpcServer(channel, QUEUE);
 
         // Start listening for RPC requests
         System.out.println(" [x] Awaiting RPC requests");
